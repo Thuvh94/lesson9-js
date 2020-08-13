@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>do-you-love-me</title>
+</head>
+<body>
+<form action="">
+    <h1>Do you love me?</h1>
+    <input type="button" value="Yes" onclick="alert('<3')">
+    <input type="button" id="no"  value="No" style="position: relative;left: 0; top:0">
+</form>
+    <script>
+        document.getElementById('no').onmouseover = jumpRandom;
+        function jumpRandom(){
+            let obj= document.getElementById('no');
+            let randomNumberWidth = Math.floor(Math.random()*window.innerWidth);
+            let randomNumberHeight = Math.floor(Math.random()*window.innerHeight);
+            // Mục đích của (Math.random()*window.innerWidth) và (Math.random()*window.innerHeight)
+            // là để tạo ra một giá trị nhỏ hơn inner Width, và innerHeight. Do Math.random luôn trả về một giá trị
+            // trong khoảng 0 đến 1.
+            obj.style.left = randomNumberWidth +'px';
+            obj.style.top = randomNumberHeight +'px';
+        }
+    </script>
+</body>
+</html>
