@@ -6,8 +6,37 @@
 </head>
 <body>
 <form action="">
-    <input type="text">
-    <input type="button">
+    <input type="number" id="inputNum" name="inputNum">
+    <input type="button" value="Tính số ngày" onclick="returnMonth();">
+    <p id="result"></p>
 </form>
+<script>
+    function returnMonth() {
+        var num = parseInt(document.getElementById("inputNum").value);
+        switch (num) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById('result').innerHTML = "Tháng " + num + " có 31 ngày.";
+                break;
+            case 4:
+            case 6:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById('result').innerHTML = "Tháng " + num + " có 30 ngày.";
+                break;
+            case 2:
+                document.getElementById('result').innerHTML = "Tháng 2 có 28 hoặc 29 ngày.";
+                break;
+            default:
+                document.getElementById('result').innerHTML = "Vui lòng nhập lại tháng trong năm";
+        }
+    }
+</script>
 </body>
 </html>
