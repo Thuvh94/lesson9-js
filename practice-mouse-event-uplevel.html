@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mouse-event-practice</title>
+</head>
+<body>
+<form action="">
+    <img src="ball.jpg" alt="ball" id='img' style="position:relative;left:0; height: 20%;width: 20%">
+    <p>Click button below to move the image to right</p>
+    <button type="button" id="btn-move" value="Move" name ='button' onclick="runBall()">Move</button>
+    <button type="button" id="btn-stop" value="Stop" name ='button' onclick="stopRun()">Stop</button>
+</form>
+    <script>
+        function moveRight() {
+            let imgObj=document.getElementById('img');
+            let imgPosition=parseInt(imgObj.style.left);
+            imgObj.style.left = imgPosition+10+'px';
+
+        }
+
+        let second = 10*60*60*1000;
+        let run = null;
+
+        function stopRun(){
+            clearInterval(run);
+            document.getElementById("btn-move").disabled = false;
+            document.getElementById("btn-stop").disabled = true;
+        }
+
+        function runBall(){
+            run = setInterval(moveRight, 100);
+            document.getElementById("btn-move").disabled = true;
+            document.getElementById("btn-stop").disabled = false;
+        }
+    </script>
+
+</body>
+</html>
