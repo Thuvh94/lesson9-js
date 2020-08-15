@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>conditional-statement-practice-1-1</title>
+</head>
+<body>
+<!--Bài 1: Nhập vào hai số a và b, và kiểm tra xem a có chia hết cho b hay không-->
+<form action="">
+    <p>Nhập số thứ nhất: </p>
+    <input type="number" id="firstNum" name="firstNum"> <br>
+    <p>Nhập số thứ hai: </p>
+    <input type="number" id="secondNum" name="secondNum"> <br>
+    <input type="button" style="margin-top: 20px" value = 'Tính toán' onclick="isDevisible()">
+</form>
+<p id="outputResult"></p>
+<script>
+    function isDevisible() {
+        let firstNum= parseInt(document.getElementById('firstNum').value);
+        let secondNum= parseInt(document.getElementById('secondNum').value);
+        let isDevisible = firstNum % secondNum===0;
+        let result = document.getElementById("outputResult");
+        if (isDevisible){
+            result.innerHTML = firstNum + ' chia hết cho ' + secondNum;
+        } else{
+            result.innerHTML = firstNum + ' không chia hết cho ' + secondNum;
+        }
+    }
+
+
+</script>
+</body>
+</html>
