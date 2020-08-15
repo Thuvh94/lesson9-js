@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>puzzle</title>
+    <style>
+        img {
+            width: 119px;
+            height: 132px;
+        }
+    </style>
+</head>
+<body>
+<img src="img1.jpg" alt="1" id="img1" onclick="changeImg(1)">
+<img src="img2.jpg" alt="2" id="img2" onclick="changeImg(2)">
+<img src="img3.jpg" alt="3" id="img3" onclick="changeImg(3)">
+<img src="img1.jpg" alt="1" id="img4" onclick="changeImg(4)">
+<img src="img1.jpg" alt="1" id="img5" onclick="changeImg(5)">
+<script>
+
+    function changeImg(num){
+        let imgObj = document.getElementById('img'+ num);
+        let imgAlt = +imgObj.alt;
+        imgAlt = Math.floor(Math.random()*3+1);
+        imgObj.src = "img" + imgAlt + ".jpg";
+        checkWin() ;
+    }
+    function checkWin(){
+        if (getImg(1).src === getImg(2).src && getImg(2).src === getImg(3).src && getImg(3).src === getImg(4).src && getImg(4).src === getImg(5).src){
+            setTimeout(function (){alert('You win!');},100);
+        }
+    }
+    function getImg(num){
+        return document.getElementById('img'+num);
+    }
+
+</script>
+</body>
+</html>
