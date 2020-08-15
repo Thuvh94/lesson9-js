@@ -10,22 +10,22 @@
     <tr>
         <td><span style="font-size: xx-large">Good</span></td>
         <td>
-            <label class="switch" >
-                <input type="checkbox" id="good" onclick="isTwoChecked('good')">
+            <label class="switch">
+                <input type="checkbox" id="good" onclick="isTwoChecked('good');">
                 <span class="slider round"></span></label>
         </td>
     <tr/>
     <tr>
         <td><span style="font-size: xx-large">Fast</span></td>
-        <td><label class="switch" >
-            <input type="checkbox" id="fast" onclick="isTwoChecked('fast')">
+        <td><label class="switch">
+            <input type="checkbox" id="fast" onclick="isTwoChecked('fast');">
             <span class=" slider round"></span></label>
         </td>
     <tr/>
     <tr>
         <td><span style="font-size: xx-large">Cheap</span></td>
-        <td><label class="switch" >
-            <input type="checkbox" id="cheap" onclick="isTwoChecked('cheap')">
+        <td><label class="switch">
+            <input type="checkbox" id="cheap" onclick="isTwoChecked('cheap');">
             <span class=" slider round"></span></label>
         </td>
     </tr>
@@ -41,13 +41,13 @@
                     cheap.checked = false;
                 }
                 break;
-            case 'fast':
+            case'fast':
                 if (fast.checked && cheap.checked===true) {
                     good.checked = false;
                 }
                 break;
             case 'cheap':
-                if (good.checked && cheap.checked=== true)
+                if ( cheap.checked && good.checked=== true){
                     fast.checked = false;
                 }
                 break;
