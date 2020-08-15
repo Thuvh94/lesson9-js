@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>good-fast-cheap</title>
+    <link rel="stylesheet" href="good-fast-cheap.css">
+</head>
+<body>
+<table>
+    <tr>
+        <td><span style="font-size: xx-large">Good</span></td>
+        <td>
+            <label class="switch" >
+                <input type="checkbox" id="good" onclick="isTwoChecked('good')">
+                <span class="slider round"></span></label>
+        </td>
+    <tr/>
+    <tr>
+        <td><span style="font-size: xx-large">Fast</span></td>
+        <td><label class="switch" >
+            <input type="checkbox" id="fast" onclick="isTwoChecked('fast')">
+            <span class=" slider round"></span></label>
+        </td>
+    <tr/>
+    <tr>
+        <td><span style="font-size: xx-large">Cheap</span></td>
+        <td><label class="switch" >
+            <input type="checkbox" id="cheap" onclick="isTwoChecked('cheap')">
+            <span class=" slider round"></span></label>
+        </td>
+    </tr>
+</table>
+<script>
+    function isTwoChecked(type) {
+        let good = document.getElementById('good');
+        let fast = document.getElementById('fast');
+        let cheap = document.getElementById('cheap');
+        switch (type) {
+            case 'good':
+                if (good.checked && fast.checked===true) {
+                    cheap.checked = false;
+                }
+                break;
+            case 'fast':
+                if (fast.checked && cheap.checked===true) {
+                    good.checked = false;
+                }
+                break;
+            case 'cheap':
+                if (good.checked && cheap.checked=== true)
+                    fast.checked = false;
+                }
+                break;
+        }
+    }
+</script>
+</body>
+</html>
